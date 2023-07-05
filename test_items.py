@@ -8,6 +8,7 @@ def test_basket_button_on_page(browser):
     basket_button = browser.find_element(By.ID, "add_to_basket_form")
     basket_button.click()
     time.sleep(2)
+    # проверка изменения суммы в корзине
     basket = browser.find_element(By.CLASS_NAME, "basket-mini")
     summ_in_basket = basket.text.split(" ")[3]
     assert summ_in_basket != "0,00"
